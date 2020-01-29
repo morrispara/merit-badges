@@ -1,0 +1,41 @@
+/*RPS by Galloway*/
+var rpsWords = ["rock","paper","scissors"];
+var setWinner = [[0,1,1],[0,2,0],[1,0,0][1,2,1],[2,1,0],[2,0,1]]; //[player's move, cpu's move, winner]
+var outOf = prompt("out of how many games?");
+var scoreKeeper = [0,0]; //[player, cpu]
+
+alert("Let's play!");
+for (let games=0; games<outOf; games++){
+	let pChoice=userTurn();
+	/*if pChoice=="q"{
+		break;
+	}*/
+	//else {
+		let cpuChoice=cpuTurn();
+	//}
+	if (pChoice==cChoice){
+		alert("Draw!");
+	}
+	else{
+		let winner = turnWinner(pChoice,cpuChoice,setWinner);
+		alert("number for winner is " +winner);
+		scoreKeeper[0] += updateScore();
+	}
+}	
+
+function pChoice(){
+	let playerMove = prompt("Make your move! [rock],[paper], or [scissors]");
+	return playerMove;
+}
+function cpuChoice(){
+	//stub
+	return 0; //returning rock
+}
+function turnWinner() //use a forloop
+	//stub
+	return 1; //cpu won
+}
+function updateScore(){
+	//stub
+	return 1;
+}
